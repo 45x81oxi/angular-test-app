@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TodosService } from "../../services/todos.service";
+import { TodosService } from "../../../../services/todos.service";
 import { Router } from "@angular/router";
 import { Todo } from "../../models/Todo";
 import { ToastrService } from "ngx-toastr";
@@ -61,7 +61,7 @@ export class TodoAddComponent implements OnInit {
       id: this.addForm.controls.id.value,
       title: this.addForm.controls.title.value,
       completed: this.addForm.controls.completed.value
-    }
+    };
 
     this.todoService.addTodo(newTodo).subscribe(() => {
       this.todos.unshift(newTodo);
